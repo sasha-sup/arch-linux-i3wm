@@ -37,6 +37,7 @@ pacman -Sy --needed --noconfirm  \
           xbindkeys \
           acpid \ 
           dolphin \
+          scrot \
 
 yay -S --noconfirm \
       google-chrome \
@@ -46,6 +47,13 @@ yay -S --noconfirm \
 
 # Docker post install step
 usermod -aG docker $USERNAME
+
+# Telegram
+mkdir -p /home/$USERNAME/Software
+curl -LO https://telegram.org/dl/desktop/linux
+latest_file=$(ls tsetup.*.tar.xz | sort -V | tail -n 1)
+tar -xvf "$latest_file" -C /home/$USERNAME/Software
+rm -f $latest_file
 
 # Terraform
 curl -LO https://releases.hashicorp.com/terraform/1.1.5/terraform_1.1.5_linux_amd64.zip

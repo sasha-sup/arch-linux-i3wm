@@ -7,7 +7,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 pacman -Syu
-pacman -S linux-lts
+pacman -S sudo linux-lts
 
 for i in 3 2 1; do
     echo "$i..."

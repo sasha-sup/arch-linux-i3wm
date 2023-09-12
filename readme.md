@@ -17,17 +17,17 @@ This repository contains all the configuration and scripts needed to set up my A
 
 - [x] Install Arch Linux
 - [x] Set up DWM
-- [ ] Install base utils
-- [ ] wg, openvpn
-- [ ] Configure key bindings
-- [ ] Add startup scripts
-- [ ] Customize status bar
+- [x] Install base utils
+- [x] wg, openvpn
+- [x] Configure key bindings
+- [x] Add startup scripts
+- [x] Customize status bar
 - [ ] Write installation guide
-- [ ] Sound
-- [ ] Bluetooth
-- [ ] Fan Speed
-- [ ] Shared volume
-- [ ] Add everywhere "I use arch, btw" 
+- [x] Sound
+- [x] Bluetooth
+- [x] Fan Speed
+- [x] Shared volume
+- [x] Add everywhere "I use arch, btw" 
  
 
 

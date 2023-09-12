@@ -24,18 +24,19 @@ while true; do
     cpu_temp=$(cat /sys/class/thermal/thermal_zone0/temp)
     cpu_temp=$((cpu_temp / 1000))
 
-    # Read fan speed
-    fan_speed=$(cat /sys/class/thermal/cooling_device0/cur_state)
-
     # Clock
     dt=$(date '+%d/%m/%Y %H:%M:%S')
 
     # Set root name
-    xsetroot -name " | Wi-Fi: $wifi | CPU: $cpu | RAM: $ram | Load Avg: $loadavg1,$loadavg5,$loadavg15 | CPU Temp: ${cpu_temp}°C | Fan Speed: ${fan_speed} RPM | $dt | Bat: $battery% |"
+    xsetroot -name " | Wi-Fi: $wifi | CPU: $cpu | RAM: $ram | Load Avg: $loadavg1,$loadavg5,$loadavg15 | CPU Temp: ${cpu_temp}°C | $dt | Bat: $battery% |"
     # Update interval
     sleep 1
 done &
 
+# Run volume icon
+volumeicon &
+# Run blueman applet
+blueman-applet &
 
 # Start DWM
 exec dwm

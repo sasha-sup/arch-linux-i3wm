@@ -44,6 +44,20 @@ pacman -Sy --needed --noconfirm  \
           vlc \
           libreoffice-fresh \
           transmission-cli \
+          htop \
+          openvpn \
+          wireguard-tools \
+          gedit \
+          mtr \
+          kde-cli-tools \
+          konsole \
+          terminator \
+          fuse2 \
+          pulseaudio pulseaudio-alsa \
+          alsa-lib alsa-utils \
+          noto-fonts-emoji \
+          feh \
+          bluez bluez-utils blueman \
 
 yay -S --noconfirm \
       google-chrome \
@@ -52,17 +66,29 @@ yay -S --noconfirm \
       1password \
       skypeforlinux-stable-bin \
       pinta \
+      aws-cli-v2 \
 
+# activate services
+SERVICES=("pulseaudio" "bluetooth" "transmission")
 
+for SERVICE in "${SERVICES[@]}" 
+do
+    systemctl start $SERVICE
+    systemctl enable $SERVICE
+done
 
+# emoji
+fc-cache -fv
+
+# wireguuard
+sudo modprobe wireguard
+echo "wireguard" | sudo tee -a /etc/modules-load.d/modules.conf
 
 # Docker post install step
 usermod -aG docker $USERNAME
 
 # Create user dirs
-DIR_NAMES=("Software" ".ssh" "Pictures" "Code" "Documents" "Downloads" "ssh-me", "keys", "vpn")
-mkdir -p /home/$USERNAME/Software
-mkdir -p /home/$USERNAME/.ssh
+DIR_NAMES=("Software" ".ssh" "Pictures/screenshot" "Code" "Documents" "Downloads" "ssh-me" "keys" "vpn" ".config")
 
 for DIR_NAME in "${DIR_NAMES[@]}"
 do
@@ -71,6 +97,8 @@ done
 
 chown -R $USERNAME:$USERNAME /home/$USERNAME
 
+# mimelist
+echo -e "[Default Applications]\ntext/plain=gedit.desktop" >> ~/.config/mimeapps.list
 
 # Ledger Live
 wget -P /home/$USERNAME/Software $Software_dir $/home/$USERNAME/Software -O ledger.Appimage https://download.live.ledger.com/latest/linux
@@ -92,8 +120,6 @@ curl -LO https://releases.hashicorp.com/terraform/1.1.5/terraform_1.1.5_linux_am
 unzip terraform_1.1.5_linux_amd64.zip
 mv terraform /usr/local/bin/
 
-
-  
 # Enable multitouch
 mkdir -p /etc/X11/xorg.conf.d/
 echo 'Section "InputClass"

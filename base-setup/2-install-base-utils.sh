@@ -38,6 +38,7 @@ pacman -Sy --needed --noconfirm  \
           acpid \ 
           dolphin \
           scrot \
+          wget \
 
 yay -S --noconfirm \
       google-chrome \
@@ -48,8 +49,29 @@ yay -S --noconfirm \
 # Docker post install step
 usermod -aG docker $USERNAME
 
-# Telegram
+# Create user dirs
+DIR_NAMES=("Software" ".ssh" "Pictures" "Code" "Documents" "Downloads" "ssh-me", "keys", "vpn")
 mkdir -p /home/$USERNAME/Software
+mkdir -p /home/$USERNAME/.ssh
+
+for DIR_NAME in "${DIR_NAMES[@]}"
+do
+    mkdir -p "/home/$USERNAME/$DIR_NAME"
+done
+
+chown -R $USERNAME:$USERNAME /home/$USERNAME
+
+
+# Ledger Live
+wget -P /home/$USERNAME/Software $Software_dir $/home/$USERNAME/Software -O ledger.Appimage https://download.live.ledger.com/latest/linux
+
+# balena Etcher
+wget -P /home/$USERNAME/Software -O balenaEtcher.Appimage https://github.com/balena-io/etcher/releases/download/v1.18.11/balenaEtcher-1.18.11-x64.AppImage
+
+# Shotcut
+wget -P /home/$USERNAME/Software -O shotcut.AppImage https://github.com/mltframework/shotcut/releases/download/v23.07.29/shotcut-linux-x86_64-230729.AppImage
+
+# Telegram
 curl -LO https://telegram.org/dl/desktop/linux
 latest_file=$(ls tsetup.*.tar.xz | sort -V | tail -n 1)
 tar -xvf "$latest_file" -C /home/$USERNAME/Software
@@ -60,8 +82,7 @@ curl -LO https://releases.hashicorp.com/terraform/1.1.5/terraform_1.1.5_linux_am
 unzip terraform_1.1.5_linux_amd64.zip
 mv terraform /usr/local/bin/
 
-# Add ssh keys
-mkdir /home/$USERNAME/.ssh
+
   
 # Enable multitouch
 mkdir -p /etc/X11/xorg.conf.d/

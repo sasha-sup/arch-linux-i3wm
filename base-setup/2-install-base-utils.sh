@@ -39,9 +39,19 @@ pacman -Sy --needed --noconfirm  \
           dolphin \
           scrot \
           wget \
+          thunderbird \
+          mc \
+          vlc \
+          libreoffice-fresh \
+          transmission-cli \
 
 yay -S --noconfirm \
       google-chrome \
+      slack-desktop \
+      zoom \
+      1password \
+      skypeforlinux-stable-bin \
+      pinta \
 
 
 

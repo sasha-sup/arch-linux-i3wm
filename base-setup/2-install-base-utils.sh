@@ -135,3 +135,11 @@ echo "30-touchpad.conf has been successfully created/updated."
 # Enable sensors
 sensors-detect
 
+# Reboot
+for i in 3 2 1; do
+    echo "$i..."
+    sleep 1
+done
+echo "Rebooting..."
+reboot
+

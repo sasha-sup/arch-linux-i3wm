@@ -13,6 +13,8 @@ This repository contains all the configuration and scripts needed to set up my A
 [Arch Linux Installation Guide](https://wiki.archlinux.org/title/Installation_guide)  
 [DWM Installation Guide](https://wiki.archlinux.org/title/Dwm).
 
+[grub theme](https://www.gnome-look.org/p/1230882)
+
 ### TO DO:
 
 - [x] Install Arch Linux

@@ -37,6 +37,8 @@ done &
 volumeicon &
 # Run blueman applet
 blueman-applet &
+# walppeper
+feh --bg-scale /home/sasha/Pictures/Wallpapers/914670.jpg &
 
 # Start DWM
 exec dwm

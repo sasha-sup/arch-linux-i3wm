@@ -18,6 +18,7 @@ This repository contains all the configuration and scripts needed to set up my A
 - [x] Install Arch Linux
 - [x] Set up DWM
 - [ ] Install base utils
+- [ ] wg, openvpn
 - [ ] Configure key bindings
 - [ ] Add startup scripts
 - [ ] Customize status bar

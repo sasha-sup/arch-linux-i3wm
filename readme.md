@@ -14,7 +14,7 @@ This repository contains all the configuration and scripts needed to set up my A
 [DWM Installation Guide](https://wiki.archlinux.org/title/Dwm).
 
 [grub theme](https://www.gnome-look.org/p/1230882)
-
+[dwm hello world](https://itnotesblog.ru/note/pervoe-znakomstvo-s-dwm)
 ### TO DO:
 
 - [x] Install Arch Linux

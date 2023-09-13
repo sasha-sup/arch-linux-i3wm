@@ -32,9 +32,7 @@ pacman -Sy --needed --noconfirm  \
           nmap \
           zip unzip \
           iptables \
-          xorg-xbacklight \
-          alsa-utils \
-          xbindkeys \
+          xorg-xbacklight xbindkeys \
           acpid \ 
           dolphin \
           scrot \
@@ -55,9 +53,14 @@ pacman -Sy --needed --noconfirm  \
           fuse2 \
           pulseaudio pulseaudio-alsa \
           alsa-lib alsa-utils \
-          noto-fonts-emoji \
+          noto-fonts-emoji ttf-dejavu noto-fonts \
           feh \
           bluez bluez-utils blueman \
+          pamixer amixer \
+          dunst \
+          slock \
+          dosfstools \
+
 
 yay -S --noconfirm \
       google-chrome \

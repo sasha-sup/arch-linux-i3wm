@@ -1,0 +1,31 @@
+# Increase volume
+"amixer -q sset Master 3%+ && dunstify 'Volume Up'"
+ XF86AudioRaiseVolume
+
+# Decrease volume
+"amixer -q sset Master 3%- && dunstify 'Volume Down'"
+ XF86AudioLowerVolume
+
+# Mute volume
+"amixer -q sset Master toggle && dunstify 'Volume Mute'"
+ XF86AudioMute
+
+# Toggle microphone
+"amixer -q set Capture toggle"
+ XF86AudioMicMute
+
+# Increase Brightness
+"xbacklight -inc 10 && dunstify 'Brightness Up'"
+ XF86MonBrightnessUp
+
+# Decrease Brightness
+"xbacklight -dec 10 && dunstify 'Brightness Down'"
+ XF86MonBrightnessDown
+
+# Lock the screen
+"slock"
+  XF86Display
+
+# Wifi Toggle
+"nmcli radio wifi off && dunstify 'Network Down'"
+  XF86WLAN

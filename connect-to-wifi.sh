@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# ip link set dev wlp0s20f3 up
+# nmcli radio wifi
+
+
 # Check if NetworkManager is installed
 if ! command -v nmcli &> /dev/null; then
     echo "NetworkManager (nmcli) is not installed. Please install it."

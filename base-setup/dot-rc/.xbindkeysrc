@@ -29,3 +29,7 @@
 # Wifi Toggle
 "nmcli radio wifi off && dunstify 'Network Down'"
   XF86WLAN
+
+# Screenshoot 
+"scrot -s ~/Pictures/screenshot"
+  Print

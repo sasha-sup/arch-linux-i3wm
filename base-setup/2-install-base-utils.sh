@@ -60,7 +60,8 @@ pacman -Sy --needed --noconfirm  \
           dunst \
           slock \
           dosfstools \
-
+          jq \
+          powertop \
 
 yay -S --noconfirm \
       google-chrome \
@@ -70,6 +71,10 @@ yay -S --noconfirm \
       skypeforlinux-stable-bin \
       pinta \
       aws-cli-v2 \
+
+
+
+xhost +SI:localuser:$USERNAME
 
 # activate services
 SERVICES=("pulseaudio" "bluetooth" "transmission")
@@ -119,7 +124,7 @@ tar -xvf "$latest_file" -C /home/$USERNAME/Software
 rm -f $latest_file
 
 # Terraform
-curl -LO https://releases.hashicorp.com/terraform/1.1.5/terraform_1.1.5_linux_amd64.zip
+curl -LO https://releases.hashicorp.com/terraform/1.5.5/terraform_1.5.5_linux_amd64.zip
 unzip terraform_1.1.5_linux_amd64.zip
 mv terraform /usr/local/bin/
 

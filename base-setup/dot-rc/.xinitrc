@@ -1,11 +1,22 @@
 # Set RU and ES layouts, change with Win+Space
 setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
 
+systemctl --user import-environment DISPLAY
+
+# Run volume icon
+volumeicon &
+# Run blueman applet
+blueman-applet &
+# walppeper
+feh --bg-scale /home/sasha/Pictures/Wallpapers/914670.jpg &
+# fn keys
+xbindkeys &
+
 # System tray
 while true; do
     # Battery Status
     battery=$(cat /sys/class/power_supply/BAT0/capacity)
-    
+
     # WiFi Quality
     wifi=$(iwconfig wlp0s20f3 | grep 'Link Quality' | awk '{print $2}' | sed 's/Quality=//')
 
@@ -28,18 +39,10 @@ while true; do
     dt=$(date '+%d/%m/%Y %H:%M:%S')
 
     # Set root name
-    xsetroot -name " | Wi-Fi: $wifi | CPU: $cpu | RAM: $ram | Load Avg: $loadavg1,$loadavg5,$loadavg15 | CPU Temp: ${cpu_temp}°C | $dt | Bat: $battery% |"
+    xsetroot -name " | 🛜 $wifi | 🔲 $cpu | RAM: $ram | 🌡️ ${cpu_temp}°C |🔋 $battery% | 🗓️ $dt "
     # Update interval
     sleep 1
 done &
 
-# Run volume icon
-volumeicon &
-# Run blueman applet
-blueman-applet &
-# walppeper
-feh --bg-scale /home/sasha/Pictures/Wallpapers/914670.jpg &
-# fn keys
-xbindkeys &
 # Start DWM
 exec dwm

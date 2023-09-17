@@ -49,3 +49,6 @@ alias vpn="sudo bash /home/sasha/Software/vpn.sh"
 alias sshb="ssh -J swcb"
 alias scpb="scp -J swcb"
 
+# Mount\unmount external drive
+alias seagate-on="sudo mount -t ntfs-3g /dev/sda1 /mnt"
+alias seagate-off="sudo mount -t ntfs-3g /dev/sda1 /mnt"

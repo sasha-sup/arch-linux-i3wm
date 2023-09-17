@@ -1,8 +1,7 @@
 # Set RU and ES layouts, change with Win+Space
 setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
-
 systemctl --user import-environment DISPLAY
-
+xrandr --output eDP-1 --brightness 1.2
 # Run volume icon
 volumeicon &
 # Run blueman applet
@@ -11,38 +10,25 @@ blueman-applet &
 feh --bg-scale /home/sasha/Pictures/Wallpapers/914670.jpg &
 # fn keys
 xbindkeys &
-
 # System tray
 while true; do
     # Battery Status
     battery=$(cat /sys/class/power_supply/BAT0/capacity)
-
     # WiFi Quality
     wifi=$(iwconfig wlp0s20f3 | grep 'Link Quality' | awk '{print $2}' | sed 's/Quality=//')
-
     # CPU Usage
     cpu=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4"%"}')
-
     # RAM Usage
     ram=$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')
-
-    # Load Average
-    loadavg1=$(awk '{print $1}' < /proc/loadavg)
-    loadavg5=$(awk '{print $2}' < /proc/loadavg)
-    loadavg15=$(awk '{print $3}' < /proc/loadavg)
-
     # Read CPU temperature
     cpu_temp=$(cat /sys/class/thermal/thermal_zone0/temp)
     cpu_temp=$((cpu_temp / 1000))
-
     # Clock
     dt=$(date '+%d/%m/%Y %H:%M:%S')
-
     # Set root name
     xsetroot -name " | 🔲 $cpu | 🌡️ ${cpu_temp}°C | RAM: $ram | 🛜 $wifi |🔋 $battery% | 🗓️ $dt "
     # Update interval
     sleep 1
 done &
-
 # Start DWM
 exec dwm

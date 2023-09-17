@@ -64,6 +64,11 @@ pacman -Sy --needed --noconfirm  \
           powertop \
           bc \
           telegram-desktop \
+          tlp \
+          smartmontools \
+          ntfs-3g \
+          
+
 
 yay -S --noconfirm \
       google-chrome \
@@ -78,7 +83,7 @@ yay -S --noconfirm \
 
 systemctl enable thinkfan.service
 systemctl start thinkfan.service
-
+systemctl enable --now tlp
 
 sed -i 's/^#HandleLidSwitch=suspend/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
 xhost +SI:localuser:$USERNAME

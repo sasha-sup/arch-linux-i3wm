@@ -62,6 +62,7 @@ pacman -Sy --needed --noconfirm  \
           dosfstools \
           jq \
           powertop \
+          bc \
 
 yay -S --noconfirm \
       google-chrome \
@@ -71,9 +72,14 @@ yay -S --noconfirm \
       skypeforlinux-stable-bin \
       pinta \
       aws-cli-v2 \
+      thinkfan \
 
 
+systemctl enable thinkfan.service
+systemctl start thinkfan.service
 
+
+sed -i 's/^#HandleLidSwitch=suspend/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
 xhost +SI:localuser:$USERNAME
 
 # activate services

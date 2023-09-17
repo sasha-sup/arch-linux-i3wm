@@ -1,9 +1,4 @@
 #!/bin/bash
-git clone https://aur.archlinux.org/thinkfan.git
-cd thinkfan
-makepkg -si
-
-
 # Enable fan control
 grep -q 'options thinkpad_acpi fan_control=1' /etc/modprobe.d/thinkpad_acpi.conf || echo -e "Enable fan conrol by executing --> \n echo 'options thinkpad_acpi fan_control=1' | sudo tee /lib/modprobe.d/thinkpad_acpi.conf"
 

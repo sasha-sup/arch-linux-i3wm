@@ -39,7 +39,7 @@ while true; do
     dt=$(date '+%d/%m/%Y %H:%M:%S')
 
     # Set root name
-    xsetroot -name " | 🛜 $wifi | 🔲 $cpu | RAM: $ram | 🌡️ ${cpu_temp}°C |🔋 $battery% | 🗓️ $dt "
+    xsetroot -name " | 🔲 $cpu | 🌡️ ${cpu_temp}°C | RAM: $ram | 🛜 $wifi |🔋 $battery% | 🗓️ $dt "
     # Update interval
     sleep 1
 done &

@@ -50,9 +50,6 @@ alias scrot-window="scrot -u ~/Pictures/screenshot"
 # vpn
 alias vpn="sudo bash /home/sasha/Software/vpn.sh"
 
-#tg
-alias tg="/home/sasha/Software/Telegram/Telegram &"
-
 # Infra junp host
 alias sshb="ssh -J swcb"
 alias scpb="scp -J swcb"

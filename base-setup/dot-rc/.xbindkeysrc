@@ -15,11 +15,11 @@
  XF86AudioMicMute
 
 # Increase Brightness
-"xbacklight -inc 10 && dunstify 'Brightness Up'"
+"xrandr --output eDP-1 --brightness $(echo "scale=2; $(xrandr --verbose | grep -i brightness | cut -f2 -d ' ')+0.10" | bc) && dunstify 'Brightness Up'"
  XF86MonBrightnessUp
 
 # Decrease Brightness
-"xbacklight -dec 10 && dunstify 'Brightness Down'"
+"xrandr --output eDP-1 --brightness $(echo "scale=2; $(xrandr --verbose | grep -i brightness | cut -f2 -d ' ')-0.10" | bc) && dunstify 'Brightness Down'"
  XF86MonBrightnessDown
 
 # Lock the screen

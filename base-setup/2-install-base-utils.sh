@@ -63,6 +63,7 @@ pacman -Sy --needed --noconfirm  \
           jq \
           powertop \
           bc \
+          telegram-desktop \
 
 yay -S --noconfirm \
       google-chrome \
@@ -122,12 +123,6 @@ wget -P /home/$USERNAME/Software -O balenaEtcher.Appimage https://github.com/bal
 
 # Shotcut
 wget -P /home/$USERNAME/Software -O shotcut.AppImage https://github.com/mltframework/shotcut/releases/download/v23.07.29/shotcut-linux-x86_64-230729.AppImage
-
-# Telegram
-curl -LO https://telegram.org/dl/desktop/linux
-latest_file=$(ls tsetup.*.tar.xz | sort -V | tail -n 1)
-tar -xvf "$latest_file" -C /home/$USERNAME/Software
-rm -f $latest_file
 
 # Terraform
 curl -LO https://releases.hashicorp.com/terraform/1.5.5/terraform_1.5.5_linux_amd64.zip

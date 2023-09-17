@@ -31,5 +31,5 @@
   XF86WLAN
 
 # Screenshoot 
-"scrot -s ~/Pictures/screenshot"
+"ksnip"
   Print

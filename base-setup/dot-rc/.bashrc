@@ -42,11 +42,6 @@ export GRAFANA_AUTH=
 export TF_VAR_swc_cf_secret_header=
 export TF_VAR_cloudflare_api_key=
 
-# Screenshot 
-alias scrot-area="scrot -s ~/Pictures/screenshot"
-alias scrot="scrot ~/Pictures/screenshot"
-alias scrot-window="scrot -u ~/Pictures/screenshot"
-
 # vpn
 alias vpn="sudo bash /home/sasha/Software/vpn.sh"
 

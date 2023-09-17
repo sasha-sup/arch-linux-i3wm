@@ -35,7 +35,7 @@ pacman -Sy --needed --noconfirm  \
           xorg-xbacklight xbindkeys \
           acpid \ 
           dolphin \
-          scrot \
+          ksnip \
           wget \
           thunderbird \
           mc \

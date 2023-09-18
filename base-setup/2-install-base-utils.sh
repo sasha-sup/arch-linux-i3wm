@@ -67,7 +67,7 @@ pacman -Sy --needed --noconfirm  \
           tlp \
           smartmontools \
           ntfs-3g \
-          
+          brightnessctl \
 
 
 yay -S --noconfirm \

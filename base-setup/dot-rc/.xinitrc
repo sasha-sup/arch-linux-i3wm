@@ -1,7 +1,6 @@
 # Set RU and ES layouts, change with Win+Space
 setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
 systemctl --user import-environment DISPLAY
-xrandr --output eDP-1 --brightness 1.2
 # Run volume icon
 volumeicon &
 # Run blueman applet

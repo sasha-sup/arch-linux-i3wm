@@ -1,5 +1,7 @@
+xsettingsd &
 # Set RU and ES layouts, change with Win+Space
 setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
+xrandr --output eDP-1 --brightness 1.02 --gamma 0.95:0.95:0.95
 systemctl --user import-environment DISPLAY
 # Run volume icon
 volumeicon &

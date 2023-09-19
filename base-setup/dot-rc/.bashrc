@@ -52,3 +52,6 @@ alias scpb="scp -J swcb"
 # Mount\unmount external drive
 alias seagate-on="echo 'Mounting Seagate to /mnt' && sudo mount -t ntfs-3g /dev/sda1 /mnt && echo 'Mounted successfully.'"
 alias seagate-off="echo 'Unmounting Seagate from /mnt...' && sudo umount /mnt && sleep 60 && echo 'Powering off the external drive...' && udisksctl power-off -b /dev/sda && echo 'Done!'"
+
+# Mount\unmount ubuntu ssd
+alias ubuntu-home="echo 'Mounting Ubuntu home to /mnt' && sudo mount /dev/nvme0n1p2 /mnt && echo 'Mounted successfully.'"

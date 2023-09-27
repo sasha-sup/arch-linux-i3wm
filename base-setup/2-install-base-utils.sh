@@ -68,6 +68,10 @@ pacman -Sy --needed --noconfirm  \
           smartmontools \
           ntfs-3g \
           brightnessctl \
+          cronie \
+          tree \
+          packer \
+          
 
 
 yay -S --noconfirm \
@@ -81,8 +85,17 @@ yay -S --noconfirm \
       thinkfan \
 
 
-systemctl enable thinkfan.service
-systemctl start thinkfan.service
+services=(
+    cronie.service
+    thinkfan.service
+)
+
+# Loop to enable each service
+for service in "${services[@]}"; do
+    systemctl start "$service"
+    systemctl enable "$service"
+done
+
 systemctl enable --now tlp
 
 sed -i 's/^#HandleLidSwitch=suspend/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
@@ -101,7 +114,7 @@ done
 fc-cache -fv
 
 # wireguuard
-sudo modprobe wireguard
+modprobe wireguard
 echo "wireguard" | sudo tee -a /etc/modules-load.d/modules.conf
 
 # Docker post install step

@@ -71,7 +71,7 @@ pacman -Sy --needed --noconfirm  \
           cronie \
           tree \
           packer \
-          
+          postgresql \
 
 
 yay -S --noconfirm \

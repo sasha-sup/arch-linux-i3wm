@@ -10,68 +10,72 @@ read -p "Enter your username: " USERNAME
 
 # Install base utils 
 pacman -Syu
-pacman -Sy --needed --noconfirm  \
-          networkmanager \
-          vim \
-          code \
-          wireless_tools \
-          locate \
-          strace \
-          stress \
-          net-tools \
-          lsof \
-          bind-tools \
-          xf86-input-libinput \
-          base-devel \
-          git \
-          lm_sensors \
-          openssh \
-          ansible \
-          docker docker-compose \
-          python python-pip \
-          nmap \
-          zip unzip \
-          iptables \
-          xorg-xbacklight xbindkeys \
-          acpid \ 
-          dolphin \
-          ksnip \
-          wget \
-          thunderbird \
-          mc \
-          vlc \
-          libreoffice-fresh \
-          transmission-cli \
-          htop \
-          openvpn \
-          wireguard-tools \
-          gedit \
-          mtr \
-          kde-cli-tools \
-          konsole \
-          terminator \
-          fuse2 \
-          pulseaudio pulseaudio-alsa \
-          alsa-lib alsa-utils \
-          noto-fonts-emoji ttf-dejavu noto-fonts \
-          feh \
-          bluez bluez-utils blueman \
-          pamixer amixer \
-          dunst \
-          slock \
-          dosfstools \
-          jq \
-          powertop \
-          bc \
-          telegram-desktop \
-          tlp \
-          smartmontools \
-          ntfs-3g \
-          brightnessctl \
-          cronie \
-          tree \
-          packer \
-          postgresql \
+pacman -Sy --needed --noconfirm \
+    networkmanager \
+    vim \
+    code \
+    wireless_tools \
+    locate \
+    strace \
+    stress \
+    net-tools \
+    lsof \
+    bind-tools \
+    xf86-input-libinput \
+    base-devel \
+    git \
+    lm_sensors \
+    openssh \
+    ansible \
+    docker docker-compose \
+    python python-pip \
+    nmap \
+    zip unzip \
+    iptables \
+    xorg-xbacklight xbindkeys \
+    acpid \ 
+    dolphin \
+    ksnip \
+    wget \
+    thunderbird \
+    mc \
+    vlc \
+    libreoffice-fresh \
+    transmission-cli \
+    htop \
+    openvpn \
+    wireguard-tools \
+    gedit \
+    mtr \
+    kde-cli-tools \
+    konsole \
+    terminator \
+    fuse2 \
+    pulseaudio pulseaudio-alsa \
+    alsa-lib alsa-utils \
+    noto-fonts-emoji ttf-dejavu noto-fonts \
+    feh \
+    bluez bluez-utils blueman \
+    pamixer amixer \
+    dunst \
+    slock \
+    dosfstools \
+    jq \
+    powertop \
+    bc \
+    telegram-desktop \
+    tlp \
+    smartmontools \
+    ntfs-3g \
+    brightnessctl \
+    cronie \
+    tree \
+    packer \
+    rsync \
+    postgresql \
+    python-virtualenv \
+    gcc \
+
 
 
 yay -S --noconfirm \

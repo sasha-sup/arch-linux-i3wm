@@ -75,6 +75,7 @@ pacman -Sy --needed --noconfirm \
     postgresql \
     python-virtualenv \
     gcc \
+    dbeaver \
 
 
 

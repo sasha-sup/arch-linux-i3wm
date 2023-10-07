@@ -76,6 +76,8 @@ pacman -Sy --needed --noconfirm \
     python-virtualenv \
     gcc \
     dbeaver \
+    ntfs-3g \
+
 
 
 

@@ -77,6 +77,8 @@ pacman -Sy --needed --noconfirm \
     gcc \
     dbeaver \
     ntfs-3g \
+    mtpfs \
+    android-tools \
 
 
 

@@ -55,7 +55,7 @@ pacman -Sy --needed --noconfirm \
     alsa-lib alsa-utils \
     noto-fonts-emoji ttf-dejavu noto-fonts \
     feh \
-    bluez bluez-utils blueman \
+    bluez bluez-utils blueman pulseaudio-bluetooth \
     pamixer amixer \
     dunst \
     slock \
@@ -121,6 +121,11 @@ done
 
 # emoji
 fc-cache -fv
+
+# jbl connect
+echo -e "\n### Automatically switch to newly-connected devices\nload-module module-switch-on-connect" | sudo tee -a /etc/pulse/default.pa
+
+pactl load-module module-bluetooth-discover
 
 # wireguuard
 modprobe wireguard

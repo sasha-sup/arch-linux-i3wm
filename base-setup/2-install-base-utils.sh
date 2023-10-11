@@ -79,19 +79,8 @@ pacman -Sy --needed --noconfirm \
     ntfs-3g \
     mtpfs \
     android-tools \
-
-
-
-
-yay -S --noconfirm \
-      google-chrome \
-      slack-desktop \
-      zoom \
-      1password \
-      skypeforlinux-stable-bin \
-      pinta \
-      aws-cli-v2 \
-      thinkfan \
+    bitwarden \
+    
 
 
 services=(
@@ -118,6 +107,12 @@ do
     systemctl start $SERVICE
     systemctl enable $SERVICE
 done
+
+
+# kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
 
 # emoji
 fc-cache -fv

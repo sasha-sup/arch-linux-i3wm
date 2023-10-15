@@ -12,4 +12,5 @@ yay -S --noconfirm \
       pinta \
       aws-cli-v2 \
       thinkfan \
+      wifi-qr \
       

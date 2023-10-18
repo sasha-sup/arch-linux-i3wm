@@ -80,8 +80,8 @@ pacman -Sy --needed --noconfirm \
     mtpfs \
     android-tools \
     bitwarden \
+    fdupes \
     
-
 
 services=(
     cronie.service

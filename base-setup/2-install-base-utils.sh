@@ -81,6 +81,7 @@ pacman -Sy --needed --noconfirm \
     android-tools \
     bitwarden \
     fdupes \
+    cheese \
     
 
 services=(

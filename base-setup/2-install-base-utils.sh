@@ -1,14 +1,14 @@
-!#/bin/bash
+#!/bin/bash
 
 # Check if the script is run as root
 if [ "$EUID" -ne 0 ]; then
   echo "Please run as root."
-  exit
+  exit 1
 fi
 
 read -p "Enter your username: " USERNAME
 
-# Install base utils 
+# Install base utils
 pacman -Syu
 pacman -Sy --needed --noconfirm \
     networkmanager \
@@ -33,7 +33,7 @@ pacman -Sy --needed --noconfirm \
     zip unzip \
     iptables \
     xorg-xbacklight xbindkeys \
-    acpid \ 
+    acpid \
     dolphin \
     ksnip \
     wget \
@@ -82,11 +82,16 @@ pacman -Sy --needed --noconfirm \
     bitwarden \
     fdupes \
     cheese \
-    
+    libvirt qemu ebtables dnsmasq
 
+# Services to enable
 services=(
     cronie.service
     thinkfan.service
+    pulseaudio
+    bluetooth
+    transmission
+    libvirtd
 )
 
 # Loop to enable each service
@@ -100,14 +105,10 @@ systemctl enable --now tlp
 sed -i 's/^#HandleLidSwitch=suspend/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
 xhost +SI:localuser:$USERNAME
 
-# activate services
-SERVICES=("pulseaudio" "bluetooth" "transmission")
 
-for SERVICE in "${SERVICES[@]}" 
-do
-    systemctl start $SERVICE
-    systemctl enable $SERVICE
-done
+# minikube & Docker
+usermod -aG libvirt $USERNAME
+usermod -aG docker $USERNAME
 
 
 # kubectl
@@ -127,14 +128,11 @@ pactl load-module module-bluetooth-discover
 modprobe wireguard
 echo "wireguard" | sudo tee -a /etc/modules-load.d/modules.conf
 
-# Docker post install step
-usermod -aG docker $USERNAME
 
-# Create user dirs
+# User directories
 DIR_NAMES=("Software" ".ssh" "Pictures/screenshot" "Code" "Documents" "Downloads" "ssh-me" "keys" "vpn" ".config")
 
-for DIR_NAME in "${DIR_NAMES[@]}"
-do
+for DIR_NAME in "${DIR_NAMES[@]}"; do
     mkdir -p "/home/$USERNAME/$DIR_NAME"
 done
 
@@ -179,4 +177,3 @@ for i in 3 2 1; do
 done
 echo "Rebooting..."
 reboot
-

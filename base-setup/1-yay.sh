@@ -12,4 +12,4 @@ yay -S --noconfirm \
       aws-cli-v2 \
       thinkfan \
       wifi-qr \
-      
+      minikube

@@ -7,7 +7,7 @@ systemctl --user import-environment DISPLAY
 volumeicon &
 # Run blueman applet
 blueman-applet &
-# walppeper
+# wallpaper
 feh --bg-scale /home/sasha/Pictures/Wallpapers/914670.jpg &
 # fn keys
 xbindkeys &

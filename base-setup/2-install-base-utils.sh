@@ -11,6 +11,7 @@ read -p "Enter your username: " USERNAME
 # Install base utils
 pacman -Syu
 pacman -Sy --needed --noconfirm \
+    zsh \
     networkmanager \
     vim \
     code \

@@ -11,7 +11,7 @@ read -p "Enter your username: " USERNAME
 # Install base utils
 pacman -Syu
 pacman -Sy --needed --noconfirm \
-    zsh \
+    xf86-video-intel \
     networkmanager \
     vim \
     code \

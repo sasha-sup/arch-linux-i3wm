@@ -30,6 +30,6 @@
 "nmcli radio wifi off && dunstify 'Network Down'"
   XF86WLAN
 
-# Screenshoot 
+# Screenshoot
 "ksnip"
   Print

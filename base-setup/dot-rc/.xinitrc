@@ -14,8 +14,17 @@ xbindkeys &
 # System tray
 while true; do
     # Battery Status
-    battery_icon=$(if [ "$(cat /sys/class/power_supply/AC/online)" -eq 1 ]; then echo "🔋"; else echo "🪫"; fi)
-    battery=$(cat /sys/class/power_supply/BAT0/capacity)
+    is_charging=$(cat /sys/class/power_supply/AC/online)
+    battery_level=$(cat /sys/class/power_supply/BAT0/capacity)
+    if [ "$is_charging" -eq 1 ]; then
+        battery_icon="⚡"
+    else
+        if [ "$battery_level" -lt 30 ]; then
+            battery_icon="🪫"
+        else
+            battery_icon="🔋"
+        fi
+    fi
     # WiFi Quality
     wifi=$(iwconfig wlp0s20f3 | grep 'Link Quality' | awk '{print $2}' | sed 's/Quality=//')
     # CPU Usage
@@ -28,7 +37,7 @@ while true; do
     # Clock
     dt=$(date '+%d/%m/%Y %H:%M:%S')
     # Set root name
-    xsetroot -name " | 🔲 $cpu | 🌡️ ${cpu_temp}°C | RAM: $ram | 📶 $wifi | $battery_icon $battery% | 🗓️ $dt "
+    xsetroot -name " | 🔲 $cpu | 🌡️ ${cpu_temp}°C | RAM: $ram | 📶 $wifi | $battery_icon $battery_level% | 🗓️ $dt "
     # Update interval
     sleep 1
 done &

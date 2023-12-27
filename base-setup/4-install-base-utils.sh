@@ -19,7 +19,7 @@ pacman -Sy --needed --noconfirm \
     git \
     ansible \
     docker docker-compose \
-    python3 python-pip \
+    python3 python-pip python-requests \
     nmap \
     zip unzip \
     dolphin \
@@ -58,7 +58,11 @@ pacman -Sy --needed --noconfirm \
     bitwarden \
     fdupes \
     cheese \
-    terraform
+    terraform \
+    man \
+    kde-cli-tools \
+    netcat
+
 systemctl enable --now tlp
 # docker post install steps
 usermod -aG docker $USER

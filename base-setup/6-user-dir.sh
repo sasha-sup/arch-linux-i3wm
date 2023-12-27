@@ -1,12 +1,11 @@
 #!/bin/bash
 
-DIR_NAMES=("Software" ".ssh" "Pictures/screenshot" "Code" "Documents" "Downloads" "ssh-me" "keys" "vpn" ".config")
+DIR_NAMES=("Software" ".ssh" "Pictures/screenshot" "Code" "Documents" "Downloads" "ssh-me" "keys" "vpn" ".config/terminator/plugins")
 for DIR_NAME in "${DIR_NAMES[@]}"; do
-    mkdir -p "/home/$USER/$DIR_NAME"
+    mkdir -p "$HOME/$DIR_NAME"
 done
 
-cd /home/$USER/Software
-
-wget -O ledger.Appimage https://download.live.ledger.com/latest/linux
-wget -O balenaEtcher.Appimage https://github.com/balena-io/etcher/releases/download/v1.18.11/balenaEtcher-1.18.11-x64.AppImage
-wget -O shotcut.AppImage https://github.com/mltframework/shotcut/releases/download/v23.07.29/shotcut-linux-x86_64-230729.AppImage
+wget https://git.io/v5Zww -O $HOME"/.config/terminator/plugins/terminator-themes.py"
+wget https://download.live.ledger.com/latest/linux -O $HOME"/Software/ledger.Appimage"
+wget https://github.com/balena-io/etcher/releases/download/v1.18.11/balenaEtcher-1.18.11-x64.AppImage -O $HOME"/Software/balenaEtcher.Appimage"
+wget https://github.com/mltframework/shotcut/releases/download/v23.07.29/shotcut-linux-x86_64-230729.AppImage -O $HOME"/Software/shotcut.AppImage"

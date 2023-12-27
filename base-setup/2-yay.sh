@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/$USER
+cd $HOME
 
 git clone https://aur.archlinux.org/yay-git.git
 cd yay

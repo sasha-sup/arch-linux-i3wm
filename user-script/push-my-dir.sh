@@ -6,6 +6,7 @@ TARGET_DIRS=(
     $BASE_DIR/arch-linux-i3wm
     $BASE_DIR/ping-me-up
     $BASE_DIR/studies
+    $BASE_DIR/sasha-sup.github.io
 )
 
 for TARGET_DIR in "${TARGET_DIRS[@]}"; do

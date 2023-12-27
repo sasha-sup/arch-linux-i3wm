@@ -15,7 +15,7 @@ for TARGET_DIR in "${TARGET_DIRS[@]}"; do
   else
     git add .
     git commit -m "Automatic commit"
-    git push origin master
+    git push
     echo "Changes in $TARGET_DIR committed and pushed."
   fi
 done

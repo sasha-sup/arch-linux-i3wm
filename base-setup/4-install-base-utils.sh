@@ -61,7 +61,8 @@ pacman -Sy --needed --noconfirm \
     terraform \
     man \
     kde-cli-tools \
-    netcat
+    netcat \
+    i3lock
 
 systemctl enable --now tlp
 # docker post install steps

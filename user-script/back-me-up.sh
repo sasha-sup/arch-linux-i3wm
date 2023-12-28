@@ -13,6 +13,8 @@ declare -a CONFIG_FILES=(
     "$HOME/.bashrc"
     "$HOME/.pgpass"
     "$CONF_DIR/ksnip/ksnip.conf"
+    "/etc/tlp.conf"
+    "/etc/thinkfan.conf"
 )
 
 for config_file in "${CONFIG_FILES[@]}"; do

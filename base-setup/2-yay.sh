@@ -3,7 +3,7 @@
 cd $HOME
 
 git clone https://aur.archlinux.org/yay-git.git
-cd yay
+cd yay-git
 makepkg -si
 
 yay -S --noconfirm \

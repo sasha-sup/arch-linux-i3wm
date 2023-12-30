@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-pacman -S bluez blueberry blueman-applet
+pacman -S bluez blueberry 
 
 systemctl enable bluetooth
 systemctl start bluetooth

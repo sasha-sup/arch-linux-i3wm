@@ -62,7 +62,8 @@ pacman -Sy --needed --noconfirm \
     man \
     kde-cli-tools \
     netcat \
-    i3lock
+    i3lock \
+    lightdm-gtk-greeter-settings
 
 systemctl enable --now tlp
 # docker post install steps

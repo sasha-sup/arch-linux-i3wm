@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR_NAMES=("Software" ".ssh" "Pictures/screenshot" "Code" "Documents" "Downloads" "ssh-me" "keys" "vpn" ".config/terminator/plugins")
+DIR_NAMES=("Software" ".ssh" "Pictures/screenshot" "Pictures/wallpapers" "Code" "Documents" "Downloads" "ssh-me" "keys" "vpn" ".config/terminator/plugins")
 for DIR_NAME in "${DIR_NAMES[@]}"; do
     mkdir -p "$HOME/$DIR_NAME"
 done

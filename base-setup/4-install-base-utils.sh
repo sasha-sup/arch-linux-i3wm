@@ -63,8 +63,10 @@ pacman -Sy --needed --noconfirm \
     kde-cli-tools \
     netcat \
     i3lock \
-    lightdm-gtk-greeter-settings
-
+    lightdm-gtk-greeter-settings \
+    neofetch \
+    ttf-nerd-fonts-symbols ttf-font-nerd \
+    
 systemctl enable --now tlp
 # docker post install steps
 usermod -aG docker $USER

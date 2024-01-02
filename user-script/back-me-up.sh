@@ -12,8 +12,8 @@ declare -A CONFIG_FILES=(
     ["$HOME/.bashrc"]="bashrc_backup"
     ["$HOME/.pgpass"]="pgpass_backup"
     ["$CONF_DIR/ksnip/ksnip.conf"]="ksnip_config_backup"
-    ["/etc/tlp.conf"]="tlp_conf_backup"
     ["/etc/thinkfan.conf"]="thinkfan_conf_backup"
+    ["/etc/iptables/iptables.rules"]="iptables_backup"
 )
 
 for config_file in "${!CONFIG_FILES[@]}"; do

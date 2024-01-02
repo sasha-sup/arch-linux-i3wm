@@ -66,6 +66,8 @@ pacman -Sy --needed --noconfirm \
     lightdm-gtk-greeter-settings \
     neofetch \
     ttf-nerd-fonts-symbols ttf-font-nerd \
+    moreutils \
+    
     
 systemctl enable --now tlp
 # docker post install steps

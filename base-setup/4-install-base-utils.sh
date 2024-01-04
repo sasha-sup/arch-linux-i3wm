@@ -23,7 +23,7 @@ pacman -Sy --needed --noconfirm \
     nmap \
     zip unzip \
     dolphin \
-    ksnip \
+    flameshot \
     thunderbird \
     mc \
     vlc \

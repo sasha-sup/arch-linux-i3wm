@@ -67,7 +67,7 @@ pacman -Sy --needed --noconfirm \
     neofetch \
     ttf-nerd-fonts-symbols ttf-font-nerd \
     moreutils \
-    
+    dunst \
     
 systemctl enable --now tlp
 # docker post install steps

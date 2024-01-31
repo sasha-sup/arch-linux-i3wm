@@ -77,3 +77,5 @@ fc-cache -fv
 # wireguuard
 modprobe wireguard
 echo "wireguard" | sudo tee -a /etc/modules-load.d/modules.conf
+# ledger-live
+wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash

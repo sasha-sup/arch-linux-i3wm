@@ -17,7 +17,7 @@ pacman -Sy --needed --noconfirm \
     bind-tools \
     base-devel \
     git \
-    ansible \
+    ansible ansible-lint \
     docker docker-compose \
     python3 python-pip python-requests \
     nmap \

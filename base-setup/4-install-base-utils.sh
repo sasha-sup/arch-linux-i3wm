@@ -68,6 +68,7 @@ pacman -Sy --needed --noconfirm \
     ttf-nerd-fonts-symbols ttf-font-nerd \
     moreutils \
     dunst \
+    kubectl \
     
 systemctl enable --now tlp
 # docker post install steps

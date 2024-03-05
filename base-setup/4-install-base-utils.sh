@@ -69,6 +69,7 @@ pacman -Sy --needed --noconfirm \
     moreutils \
     dunst \
     kubectl \
+    inetutils \
     
 systemctl enable --now tlp
 # docker post install steps

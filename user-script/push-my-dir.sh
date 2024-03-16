@@ -15,7 +15,7 @@ for TARGET_DIR in "${TARGET_DIRS[@]}"; do
     echo "No changes in $TARGET_DIR."
   else
     git add .
-    git commit -m "Automatic commit"
+    git commit -m "Auto commit"
     git push
     echo "Changes in $TARGET_DIR committed and pushed."
   fi

@@ -82,3 +82,6 @@ echo "wireguard" | sudo tee -a /etc/modules-load.d/modules.conf
 # ledger-live
 # https://support.ledger.com/hc/en-us/articles/115005165269?utm_source=ledger_live_desktop&utm_medium=self_referral&utm_content=error_cantopendevice&support=true
 wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+
+# Autoclean 
+pacman -Qtdq | ifne sudo pacman -Rns -

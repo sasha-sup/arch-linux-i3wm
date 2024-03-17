@@ -7,7 +7,7 @@ while true; do
     time_to_empty=$(upower -d | grep -E 'time to empty' | awk '!seen[$0]++ {gsub(/[^0-9.]/, "", $4); hours=int($4); minutes=int(($4 - hours) * 60); printf "%d:%d\n", hours, minutes}')
     percentage=$(upower -d | grep -E 'percentage' | awk '!seen[$0]++ {gsub(/[^0-9.]/, "", $2); print $2}')
 
-   if [ -n "$percentage" ] && [ -n "$time_to_empty" ]; then
+   if [ -n "$percentage" ]; then
         if [ "$percentage" -lt 30 ]; then
             bat_status_display="🪫"
         elif [ "$bat_status" = "Charging" ]; then

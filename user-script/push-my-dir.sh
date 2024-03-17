@@ -11,7 +11,7 @@ TARGET_DIRS=(
 
 for TARGET_DIR in "${TARGET_DIRS[@]}"; do
   cd "$TARGET_DIR" || continue
-  if git diff --quiet; then
+  if git status | grep -q "nothing to commit, working tree clean"; then
     echo "No changes in $TARGET_DIR."
   else
     git add .

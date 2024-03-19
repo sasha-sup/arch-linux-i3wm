@@ -16,7 +16,7 @@ pacman -Sy --needed --noconfirm \
     python-virtualenv gcc dbeaver ntfs-3g mtpfs android-tools bitwarden \
     fdupes cheese terraform man kde-cli-tools netcat i3lock \
     lightdm-gtk-greeter-settings neofetch ttf-nerd-fonts-symbols ttf-font-nerd \
-    moreutils dunst kubectl inetutils xautolock xorg-xrandr
+    moreutils dunst kubectl inetutils xautolock xorg-xrandr sshpass
     
 systemctl enable --now tlp
 # docker post install steps

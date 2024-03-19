@@ -27,5 +27,5 @@ echo "
 # Example: pip install package_name
 #
 # When done, deactivate
-# source './$venv_name-venv/bin/deactivate'
+# deactivate
 "

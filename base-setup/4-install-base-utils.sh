@@ -16,9 +16,17 @@ pacman -Sy --needed --noconfirm \
     python-virtualenv gcc dbeaver ntfs-3g mtpfs android-tools bitwarden \
     fdupes cheese terraform man kde-cli-tools netcat i3lock \
     lightdm-gtk-greeter-settings neofetch ttf-nerd-fonts-symbols ttf-font-nerd \
-    moreutils dunst kubectl inetutils xautolock xorg-xrandr sshpass
+    moreutils dunst kubectl inetutils xautolock xorg-xrandr sshpass bash-completion helm \
     
-systemctl enable --now tlp
+
+# kubectl autocomplete
+kubectl completion bash > ~/.kube/completion.bash.inc
+printf "
+# kubectl shell completion
+source '$HOME/.kube/completion.bash.inc'
+" >> $HOME/.bash_profile
+     
+systemctl enable --now tlp # <---???
 # docker post install steps
 usermod -aG docker $USER
 # emoji

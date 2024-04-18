@@ -16,3 +16,4 @@ yay -S --noconfirm \
       wifi-qr \
       minikube \
       xmind \
+      lens-bin \

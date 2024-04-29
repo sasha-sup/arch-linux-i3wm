@@ -10,7 +10,6 @@ yay -S --noconfirm \
       slack-desktop \
       zoom \
       skypeforlinux-stable-bin \
-      pinta \
       aws-cli-v2 \
       thinkfan \
       wifi-qr \

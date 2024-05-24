@@ -23,5 +23,5 @@ if_mem_2much() {
 while true; do
     if_cpu_hot
     if_mem_2much
-    sleep 60
+    sleep 300
 done

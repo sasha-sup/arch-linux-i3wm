@@ -17,8 +17,8 @@ pacman -Sy --needed --noconfirm \
     fdupes cheese terraform man kde-cli-tools netcat i3lock \
     lightdm-gtk-greeter-settings neofetch ttf-nerd-fonts-symbols ttf-font-nerd \
     moreutils dunst kubectl inetutils xautolock xorg-xrandr sshpass bash-completion helm usbutils \
-    fbreader
-    
+    fbreader atop iftop nethogs
+
 
 # kubectl autocomplete
 kubectl completion bash > ~/.kube/completion.bash.inc
